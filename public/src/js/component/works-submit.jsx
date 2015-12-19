@@ -1,6 +1,6 @@
 var React = require('react');
 
-var key = '386b52287a2448f8a35040846fad77f3';
+var key = '';
 
 function getTargetUrl(srcUrl) {
 	return  `http://api.embed.ly/1/oembed?key=${key}&url=${srcUrl}`;
