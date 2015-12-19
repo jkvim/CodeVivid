@@ -2,19 +2,21 @@ var React = require('react');
 var CommentBox = require('./comment.jsx');
 var gravatar = require('gravatar');
 var moment = require('moment');
+var AVATAR_CDN = 'http://fdn.geekzu.org/avatar/'
 
 var BreifInfo = React.createClass({
 	render: function () {
 		var works = this.props.works;
 		var email = works.user.email
 		var username = works.user.username;
-		var avatar = gravatar.url(email);
+		var avatarId = gravatar.url(email).match(/.*\/(\w+)?/)[1];
+		var avatar = `${AVATAR_CDN}${avatarId}`
 		var userPage = `/user/${username}`;
 		return(
 			<div className='ui left aligned segment user-info'>
 					<div className='ui fluid card user-card'>
 						<div className='content'>
-							<div className='userCard'>
+							<div className='user-text'>
 								<img src={avatar} className='ui tiny floated image'/>
 								<div className='title'><h1>{works.title}</h1></div>
 								By <a href={works.author_url}>{works.author}</a>
