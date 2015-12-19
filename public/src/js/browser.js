@@ -113,7 +113,6 @@ function resolve(url) {
 			url.match(route.url);
 
 		if (match) {
-			console.log(key);
 			route.handle();
 		}
 	}
