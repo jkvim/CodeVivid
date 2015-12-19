@@ -8,6 +8,11 @@
 
 构建工具: webpack
 
-采用采用简单前后端同构的架构，没有使用Redux和react-router
+功能:
+- 分享到微博和微信朋友圈 
+- 评论,点赞(收藏)
+- 个人主页
+- 作品预览
+- 发表作品
 
 Let's go:point_right: http://code-vivid.com
