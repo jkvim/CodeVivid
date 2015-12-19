@@ -1,0 +1,11 @@
+extends ./layout.jade
+
+block view
+	div.container#publish-page
+		div(class="ui center aligned segment" id="publish-page-title")
+			h2 欢迎发布作品
+			p 一起来分享创作吧
+		div(id="works-submit" className="container")
+			!= render(WorksSubmitBar())
+
+

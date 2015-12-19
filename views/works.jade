@@ -1,0 +1,14 @@
+extends ./layout.jade
+
+block head
+		script(src="//cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.min.js")
+		script(src="//cdn.bootcss.com/moment.js/2.10.6/moment-with-locales.min.js")
+		script(src="//cdn.bootcss.com/lodash.js/3.10.1/lodash.min.js")
+
+block view
+	div#works
+		!= render(WorksWrapper({'works': works, 'session': session, 'isLiked': isLiked}))
+	script(type='text/javascript')
+		!= '__works__ = ' + safeStringify(works) + ';'
+		!= '__isLiked__ = ' + isLiked.toString() + ';'
+

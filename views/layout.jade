@@ -1,0 +1,49 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title CodeVivid
+		script(src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js")
+		script(src="//cdn.bootcss.com/semantic-ui/2.1.6/semantic.min.js")
+		link(rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.1.6/semantic.min.css")
+		link(rel="stylesheet" href="/css/bundle.css")
+		block head
+	body
+		div(id="root")
+			div#navbar
+				!= render(NavBar({'session':session}))
+			script(type='text/javascript')
+				!= '__session__ = ' + safeStringify(session) + ';'
+
+		if (flash && flash.success) 
+			div.flash
+				div(class="ui green message")
+					i(class="close icon")
+					!= flash.success	
+
+		if (flash && flash.error)
+			div.flash
+				div(class="ui red message")
+					i(class="close icon")
+					!= flash.error
+
+		block view
+
+		script(type='text/javascript').
+			$('.ui.message .close.icon').on('click', function() {
+					$(this).closest('.message').fadeOut('slow');
+			});
+
+
+		script(src="/js/common.js")
+		script(src="/js/bundle.js")
+
+
+
+
+		
+
+
+
+
+

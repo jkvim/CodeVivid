@@ -1,0 +1,16 @@
+extends ./layout.jade
+
+block view
+	div.container#user-wrap
+		div.container#user-profile
+			!= render(Profile({'user':user}))
+		div.container#user-works-tab
+			!= render(Tabs({'user': user}))
+		script(type='text/javascript')
+			!= 'var __user__ = ' + safeStringify(user) + ';'
+
+
+				
+				
+
+				
