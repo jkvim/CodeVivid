@@ -100,7 +100,7 @@ var WorksDetails = React.createClass({
 		}
 
 		$('.share-bar').share({}, {
-			description: '我在CodeVivid 发布了一个作品, 快来点赞吧',
+			description: '我从CodePen转载了一个作品, 快来点赞吧',
 			image: this.props.works.thumbnail_url,
 		});
 
