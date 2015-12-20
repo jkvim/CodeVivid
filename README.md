@@ -1,5 +1,5 @@
 # CodeVivid
-分享CodePen作品的中文社区
+分享[CodePen](codpen.io)作品的中文社区
 
 
 参考[N-club](https://github.com/nswbmw/N-club)
