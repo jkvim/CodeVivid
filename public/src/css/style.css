@@ -1,6 +1,5 @@
-body {
+html,body {
 	background-color:#f9f9f7;
-	height: 100%; 
 	margin: 0px;
 }
 div {
@@ -8,6 +7,13 @@ div {
 	margin: 0;
 	padding: 0;
 }
+
+#page-wrap {
+	position: relative;
+	width: 100%;
+	min-height: 1100px;
+}
+
 .container{width:100%;max-width:100%;margin:0 auto}
 .navbar{height:60px;line-height:60px; border: none}
 #navbar .right.menu *{text-align: center}
@@ -335,29 +341,8 @@ color: #2e495c; border: none}
 
 /*footer*/
 #footer {
-	position: relative;
-	top: 50px;
-	height: 60px;
+	bottom: 0px;
 	width: 100%;
-}
-
-#footer .ui.center.container{
-	height: 100%;
-	width: 100%;
-}
-
-#footer .ui.center.segment{
-	height: 100%;
-	width: 100%;
-	background: rgba(47, 68, 86, 0.27);
-	border: none;
-	box-shadow: none;
-	padding-top: 20px;
-	border-radius: 0px;
-}
-
-#footer a{
-	color: black;
 }
 
 

@@ -1,6 +1,6 @@
 var React = require('react');
-var gravatar = require('gravatar');
 var moment = require('moment');
+var util = require('./util.js');
 
 moment.locale('zh-cn');
 
@@ -11,6 +11,8 @@ function Comment(comment) {
 	}
 
 	var userPage = `/user/${comment.user.username}`;
+	var avatar = util.getAvatarByEamil(comment.user.email);
+
 	return (
 		<div className='ui comment '>
 			<div className='ui right floated button remove-comment-button'
@@ -20,7 +22,7 @@ function Comment(comment) {
 			<div className='comment-user'>
 				<div className='comment-avatar-wrap'>
 					<a href={userPage} className='avatar'>
-						<img src={gravatar.url(comment.user.email) }/>
+						<img src={avatar}/>
 					</a>
 				</div>
 				<div className='comment-user-text'>

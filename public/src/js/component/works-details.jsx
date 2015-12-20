@@ -1,16 +1,14 @@
 var React = require('react');
 var CommentBox = require('./comment.jsx');
-var gravatar = require('gravatar');
 var moment = require('moment');
-var AVATAR_CDN = 'http://fdn.geekzu.org/avatar/'
+var util = require('./util.js');
 
 var BreifInfo = React.createClass({
 	render: function () {
 		var works = this.props.works;
 		var email = works.user.email
 		var username = works.user.username;
-		var avatarId = gravatar.url(email).match(/.*\/(\w+)?/)[1];
-		var avatar = `${AVATAR_CDN}${avatarId}`
+		var avatar = util.getAvatarByEamil(email);
 		var userPage = `/user/${username}`;
 		return(
 			<div className='ui left aligned segment user-info'>

@@ -9,11 +9,15 @@ html
 		link(rel="stylesheet" href="/css/bundle.css")
 		block head
 	body
-		div(id="root")
+		div(id="page-wrap")
 			div#navbar
 				!= render(NavBar({'session':session}))
+			block view
+		footer#footer
+
 			script(type='text/javascript')
 				!= '__session__ = ' + safeStringify(session) + ';'
+
 
 		if (flash && flash.success) 
 			div.flash
@@ -27,15 +31,12 @@ html
 					i(class="close icon")
 					!= flash.error
 
-		block view
+
 
 		script(type='text/javascript').
 			$('.ui.message .close.icon').on('click', function() {
 					$(this).closest('.message').fadeOut('slow');
 			});
-
-		div#footer
-
 
 		script(src="/js/common.js")
 		script(src="/js/bundle.js")

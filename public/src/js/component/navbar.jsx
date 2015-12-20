@@ -1,5 +1,5 @@
 var React = require('react');
-var gravatar = require('gravatar');
+var util = require('./util.js');
 
 var RightMenu = React.createClass({
 	componentDidMount: function () {
@@ -12,13 +12,13 @@ var RightMenu = React.createClass({
 		if (this.props.session && this.props.session.user) {
 			var username = this.props.session.user.username;
 			var email  = this.props.session.user.email;
-			var avatarUrl = gravatar.url(email, {s: '100'});
+			var avatar = util.getAvatarByEamil(email, {s: '100'});
 
 			Login = (
 				<div className="right menu ">
 					<div className="ui dropdown item">
 					<div className="item">
-						<img className="ui mini avatar image" src={avatarUrl}/>
+						<img className="ui mini avatar image" src={avatar}/>
 					</div>
 						<div className="menu">
 								<a className="item" href="/logout">注销</a> 

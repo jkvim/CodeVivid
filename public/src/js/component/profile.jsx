@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import gravatar from 'gravatar';
-import linkifyStr from 'linkifyjs/string';
+var React = require('react');
+var ReactDOM = require('react-dom');
+var linkifyStr = require('linkifyjs/string');
+var util = require('./util.js');
 
-var UserCard = (props) => {
+function UserCard (props) {
 	var user = props.user;
 	var htmlText = '';
 	if (user.signature)
@@ -45,10 +45,10 @@ function UserAvatar (props) {
 var Profile = React.createClass({
 	render: function () {
 		var user = this.props.user;
-		var avatarUrl = gravatar.url(user.email, {s: 150})
+		var avatar = util.getAvatarByEamil(user.email, {s: 150});
 		return (
 			<div className="ui two column" id='profile-wrapper'>
-				<UserAvatar url={avatarUrl}/>
+				<UserAvatar url={avatar}/>
 				<UserCard user={user}/>
 			</div>
 		)
