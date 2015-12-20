@@ -1,4 +1,5 @@
 var NavBar = require('./component/navbar.jsx');
+var Footer = require('./component/footer.jsx');
 var ReactDOM = require('react-dom');
 var React = require('react');
 var render = ReactDOM.render;
@@ -105,7 +106,9 @@ var routes = {
 
 function resolve(url) {
 	var navbar = document.getElementById('navbar');
+	var footer = document.getElementById('footer');
 	render(<NavBar session={__session__}/>, navbar);
+	render(<Footer />, footer);
 
 	for (var key in routes) {
 		var route = routes[key];

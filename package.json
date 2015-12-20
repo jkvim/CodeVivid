@@ -8,6 +8,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node app.js",
     "build": "webpack --profile --progress --config ./webpack.build.config.js",
+    "watch": "webpack --watch --progress --config ./webpack.build.config.js",
     "dev": "webpack-dev-server --hot --inline --devtool eval-source-map --progress --colors --config ./webpack.dev.config.js --content-base public/ "
   },
   "repository": {

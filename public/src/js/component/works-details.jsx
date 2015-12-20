@@ -19,7 +19,6 @@ var BreifInfo = React.createClass({
 							<div className='user-text'>
 								<img src={avatar} className='ui tiny floated image'/>
 								<div className='title'><h1>{works.title}</h1></div>
-								By <a href={works.author_url}>{works.author}</a>
 							</div>
 							<div className='meta'>
 								<a href={userPage}>{username}</a>
@@ -28,8 +27,13 @@ var BreifInfo = React.createClass({
 							<div  className='description'>
 								<p>{works.description}</p>
 								<p>
-									作品原链接 
-									<a href={works.srcUrl}> {works.srcUrl}</a>
+									该作品转载自<a href='codepen.io'>CodePen</a>
+								</p>
+								<p>
+									原创者 <a href={works.author_url}>@{works.author}</a>
+								</p>
+								<p>
+									作品原链接<a href={works.srcUrl}> {works.srcUrl}</a>
 								</p>
 							</div>
 						</div>

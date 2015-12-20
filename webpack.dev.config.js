@@ -9,8 +9,8 @@ module.exports = {
 	entry: ['webpack/hot/dev-server', 
 		path.resolve(__dirname, './client.js')],
 	output: {
-		path: path.resolve(__dirname, './public'),
-		filename: '/js/bundle.js'
+		path: path.resolve(__dirname, './public/'),
+		filename: '/bundle.js'
 	},
 	module: {
 		loaders: [

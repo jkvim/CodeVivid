@@ -43,7 +43,8 @@ var NavBar = React.createClass({
 		return (
 		<div className="ui container">
 			<div className="ui fixed menu navbar page grid">
-				<a href="/" className="ui red header item">CodeVivid</a>
+				<a href="/" className="ui red header item">CodeVivid
+				</a>
 				<RightMenu session={this.props.session}/>
 			</div>
 		</div>

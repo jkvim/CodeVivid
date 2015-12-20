@@ -7,7 +7,7 @@ var Promo = React.createClass({
 				<div id='promo-view' className='ui container'>
 					<div className='promo-content'>
 						<h1> 欢迎来到CodeVivid </h1>
-						<p>一起用编程创造奇妙世界吧</p>
+						<a href='codepen.io'>分享你的CodePen</a>
 					</div>
 					<div className='promo-background' dangerouslySetInnerHTML={{__html: this.props.works.iframe}}>
 					</div>
