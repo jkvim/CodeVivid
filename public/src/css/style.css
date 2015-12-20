@@ -92,7 +92,6 @@ div {
 }
 
 #promo-view .promo-background iframe{
-	z-index: -1;
 	height: 100%;
 	width: 100%;
 	border: 0;
