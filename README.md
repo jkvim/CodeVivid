@@ -2,7 +2,7 @@
 分享[CodePen](codpen.io)作品的中文社区
 
 
-参考[N-club](https://github.com/nswbmw/N-club)
+以[N-club](https://github.com/nswbmw/N-club)为模板构造的网站
 
 框架: Koa | Semantic-UI | React.js
 
