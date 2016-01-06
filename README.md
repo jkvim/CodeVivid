@@ -18,4 +18,7 @@
 ToDo:
 - follow
 
+Bug:
+- 任何人登录了都可以删除别人的评论和作品
+
 Let's go:point_right: http://code-vivid.com
