@@ -3,6 +3,6 @@ MAINTAINER jkvim jkvim@outlook.com
 RUN mkdir -p /opt/nodejs
 ADD . /opt/nodejs
 WORKDIR /opt/nodejs
-RUN npm install
+RUN npm install --registry=https://registry.npm.taobao.org
 RUN npm run build
 EXPOSE 3001
