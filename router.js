@@ -4,6 +4,7 @@ var _ = require('lodash');
 var $User = Models.$User;
 var $Works = Models.$Works;
 var $Comment = Models.$Comment;
+var embedKey = require('config-lite').embedKey;
 
 router.get('/', function *() {
 	var works = yield $Works.getWorksByPage(1);
@@ -165,10 +166,19 @@ router.post('/works/:id/:action', function *() {
 	this.status = 200;
 });
 
+function getTargetUrl(key, srcUrl) {
+	return  `http://api.embed.ly/1/oembed?key=${key}&url=${srcUrl}`;
+}
+
+router.get('/embedurl', function *() {
+  this.body = getTargetUrl(embedKey, this.query.url);
+  this.status = 200;
+});
+
 router.get('/logout', function *() {
 	this.session.user = null;
 	this.redirect('back');
-})
+});
 
 module.exports = router;
 

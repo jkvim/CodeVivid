@@ -8,7 +8,7 @@ module.exports = {
 	mongodb: {
     url: 'mongodb://' + MONGO_HOST + ':' + MONGO_PORT + '/vivid'
 	},
-  key: process.env.KEY || '',
+  embedKey: process.env.KEY || '',
 	schemeConf: path.join(__dirname, './default.scheme'),
 	staticPath: path.join(__dirname, '../public/build'),
 	staticOption: {

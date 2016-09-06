@@ -1,10 +1,5 @@
 var React = require('react');
 
-var key = '';
-
-function getTargetUrl(srcUrl) {
-	return  `http://api.embed.ly/1/oembed?key=${key}&url=${srcUrl}`;
-}
 
 function getRealHtml(author, slug) {
 	return `<iframe scrolling="no" frameborder="0" src="http://s.codepen.io/${author}/debug/${slug}" allowfullscreen="true"></iframe>`;
@@ -41,22 +36,21 @@ var WorksSubmitBar = React.createClass({
 	},
 
 	fetchFrame: function (url) {
-		var targetUrl = getTargetUrl(url);
+    var self = this;
 		$('.button.preview').addClass('loading');
-
-		$.get(targetUrl, function (data) {
-			this.setState({previewContent: data,
-									 	 url: url});
-
-		}.bind(this))
-
-		.fail(function (err) {
-			console.log(err);
-			++countFetchHTML;
-			console.log('fali:', countFetchHTML);
-			$('.button.preview').removeClass('loading');
-			if (countFetchHTML < 3) this.fetchFrame();
-		}.bind(this));
+    $.get('/embedurl?url=' + url, function (targetUrl) {
+      $.get(targetUrl, function (data) {
+        self.setState({previewContent: data,
+                       url: url});
+      })
+      .fail(function (err) {
+        console.log(err);
+        ++countFetchHTML;
+        console.log('fali:', countFetchHTML);
+        $('.button.preview').removeClass('loading');
+        if (countFetchHTML < 3) this.fetchFrame();
+      });
+    });
 	},
 
 	readySumit: function (author, slug, iframe) {
